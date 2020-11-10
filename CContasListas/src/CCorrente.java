@@ -1,0 +1,44 @@
+public class CCorrente {
+    private int numero;
+    private float saldo;
+    
+    
+    public CCorrente(int num, float sal){
+        this.numero = num;
+        this.saldo = sal;
+        
+    }
+    
+    public void creditar(float valor){
+        this.saldo = saldo+valor;
+        
+    }
+    
+    public void debitar(float valor){
+        if (valor <= this.saldo)
+            this.saldo = this.saldo - valor;
+        else
+            System.out.println("Saldo Insuficiente");
+    }
+    
+    public float getSaldo(){
+        return this.saldo;
+    }
+    
+    public void setSaldo(float sal){
+        this.saldo=sal;
+    }
+    
+    public int getNumero(){
+        return numero;
+    }
+    
+    public void setNumero(int numero){
+        this.numero = numero;
+    }
+    
+    
+    public String toString(){
+        return("Conta: "+ this.numero + " Saldo: " + this.saldo);
+    }
+}
